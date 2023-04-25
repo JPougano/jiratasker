@@ -4,7 +4,7 @@ require("dotenv").config();
 const { DOMAIN_ENDPOINT, ATLASSIAN_USERNAME, ATLASSIAN_API_KEY } = process.env;
 
 const getIssue = async () => {
-  const baseUrl = `${DOMAIN_ENDPOINT}/rest/api/2/issue/CXX-2184`;
+  const baseUrl = `${DOMAIN_ENDPOINT}/rest/api/2/issue/<taskIssueId>`;
 
   const auth = {
       username: ATLASSIAN_USERNAME,
@@ -30,7 +30,5 @@ const getIssue = async () => {
     console.error(error);
   }
 };
-
-getIssue();
 
 module.exports = getIssue;
